@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" 
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>IDECodeSnippetCompletionPrefix</key>
+    <string>bddtest</string>
+    <key>IDECodeSnippetCompletionScopes</key>
+    <array>
+        <string>TopLevel</string>
+    </array>
+    <key>IDECodeSnippetContents</key>
+    <string>import Testing
+@testable import YourModule
+
+struct YourModuleTests {
+
+    // MARK: - GIVEN state, WHEN action, THEN expectation
+
+    @Test
+    func `GIVEN a new student WHEN initialized THEN is not at school`() async throws {
+        let student = Student()
+        #expect(student.isAtSchool == false)
+    }
+
+    @Test
+    func `GIVEN a student at home WHEN going to school THEN is at school`() async throws {
+        var student = Student()
+        student.goToSchool()
+        #expect(student.isAtSchool == true)
+    }
+
+    @Test
+    func `GIVEN a student at school WHEN leaving school THEN is no longer at school`() async throws {
+        var student = Student()
+        student.goToSchool()
+        student.leaveSchool()
+        #expect(student.isAtSchool == false)
+    }
+
+    @Test
+    func `📱 SidebarView shows the correct title after login`() async throws {
+        let viewModel = SidebarViewModel(isLoggedIn: true)
+        #expect(viewModel.title == "Welcome back!")
+    }
+}
+</string>
+    <key>IDECodeSnippetIdentifier</key>
+    <string>F97E43B1-EF2E-4ED6-9BDD-BDDSTYLEEN</string>
+    <key>IDECodeSnippetLanguage</key>
+    <string>Xcode.SourceCodeLanguage.Swift</string>
+    <key>IDECodeSnippetTitle</key>
+    <string>BDD Swift Testing Template (EN)</string>
+    <key>IDECodeSnippetSummary</key>
+    <string>Template for readable @Test methods with BDD-style naming</string>
+    <key>IDECodeSnippetUserSnippet</key>
+    <true/>
+    <key>IDECodeSnippetVersion</key>
+    <integer>2</integer>
+</dict>
+</plist>
